@@ -749,6 +749,10 @@ Continuamos explorando los datos de Economía Naranja ahora usando los boxplots,
 
 Nota: EL gráfico es el del ejercicio anterior ya que no hemos hecho plotted a nada mas.
 
+economy <- mean (orangeec$GDP.PC)
+economy
+[1] 14052.94 #El promedio de PIB per cápita en los países (en dólares)
+
 Creamos las nuevas variables
 
 ![eda_boxplot_4](src/eda_boxplot_4.jpg)
@@ -767,14 +771,14 @@ economy
 orangeec <- orangeec %>%
   mutate(Strong_economy = ifelse(`GDP PC` < economy,
                 "Por debajo promedio pib per cápita",
-                "Sobre-Arriba promedio pib per cápita"))
+                "Sobre-Arriba promedio pib per cápita")) #Es la creación de una nueva variable en el dataset. 
 ```
 
 ![eda_boxplot_6](src/eda_boxplot_6.jpg)
 
 ```R
 # Hacemos el boxplot
-ggplot(orangeec, aes(x=Strong_economy, y=`Creat Ind % GDP`,
+ggplot(orangeec, aes(x=Strong_economy, y= Creat.Ind%GDP,
                      fill=Strong_economy))+
   geom_boxplot(alpha=0.4)+
   labs(x="Tipo de país", y="Aporte economía Naranja al pib",
