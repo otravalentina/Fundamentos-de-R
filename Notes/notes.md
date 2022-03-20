@@ -604,6 +604,11 @@ Ejercicio 1
 ![boxplot_ejercicio_r_1](src/boxplot_ejercicio_r_1.jpg)
 
 Observamos la relación de rendimiento de combustible respecto al numero de cilindros de los autos.
+#Eda scatter plot mtcars (sin ningún tipo de función descargada se puede hacer este) 
+
+plot(mtcars$mpg ~ mtcars$cyl,#y función de x, la ~ se puede hacer con alt+shift+ñ
+     xlab = "cilindros", ylab = "millas por galón",
+     main= "Relación cilindros y millas por galón") 
 
 Ejemplo 2
 
@@ -617,12 +622,25 @@ Ejemplo 3
 
 Hay países que invierten en educacion hasta el 7% de su PIB y tiene  alto desempleo, y otros pero la muestra es mixta.
 
+#EDA orangeec
+
+plot(orangeec$Unemployment ~ orangeec$Education.invest...GDP,
+     xlab="Inversión educación (%PIB)",
+     ylab = "Desempleo", main="Relación inversión en educación y desempleo")
+
 Ejemplo 4
 
 ![boxplot_ejercicio_r_4](src/boxplot_ejercicio_r_4.jpg)
 
 ### Clase 17 EDA con histogramas
 
+#histogramas mtcars qplot (sin instalar nada) 
+
+qplot (mtcars$hp,
+       geom="histogram",
+       xlab="Caballos de fuerza",
+       main= "Carros según caballos de fuerza")
+       
 Para realizar EDA con un histograma dentro de R debemos utilizar la función **hist()**, los argumentos que debemos pasarle son:
 
 - la información en el eje X.
