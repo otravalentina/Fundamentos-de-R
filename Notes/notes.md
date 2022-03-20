@@ -748,8 +748,9 @@ ggplot(mtcars, aes(x=as.factor(cyl), y=hp, fill=cyl))+
 Para este ejercicio particular tuvimos que hacer renombrar los valores la columna "am" por true/Manual y false/Automático para cambiar el nombre de la etiqueta inferior (como un labelEncoding pero inverso).
 
 ```R
-mtcars$am <- factor(mtcars$am, levels = c(TRUE,FALSE),
-                    labels = c("Manual", "Automatico"))
+rm(mtcars)
+mtcars$am=factor(mtcars$am, levels = c(1,0), labels = 
+                   c("Manual", "Automática"))
 
 ggplot(mtcars, aes(x=am, y=mpg, fill=am))+
   geom_boxplot(alpha=0.6)+
@@ -759,6 +760,7 @@ ggplot(mtcars, aes(x=am, y=mpg, fill=am))+
   theme(panel.background = element_blank(),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
+
 ```
 
 ### Clase 20 EDA con dataset proyecto - box plot- ggplot2 - dplyr
