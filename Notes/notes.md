@@ -704,9 +704,9 @@ Observamos como solo 1 país aporta el 7% del PIB mediante economía naranja.
 ggplot()+geom_histogram(data=orangeec,
                         aes(x=Internet penetration ... population), fill="red", color="yellow",
                         binwidth= 5)+
-  scale_x_continuous(breaks = seq(40, max(100), 5))+ # permite hacer escala custom min,max, steps
   labs(x="Penetración Internet (%) población", y="cantidad de países",
        title="Penetración de Internet en países LATAM")+
+       scale_x_continuous(breaks = seq(30,100,by=5))+ # permite hacer escala custom min,max, steps
   theme(legend.position = "none")+
   theme(panel.background = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
