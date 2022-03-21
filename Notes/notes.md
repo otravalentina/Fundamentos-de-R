@@ -973,6 +973,16 @@ pairs(Eficientes[,1:5])
 #Filtramos todos los autos mercedes usando str_dect
 merc <- mtcars %>%
   filter(str_detect(model, "Merc"))
+  
+#Si ocurre este error
+Error in `filter()`:
+! Problem while computing `..1 = str_detect(model, "Merc")`.
+Caused by error in `stri_detect_regex()`:
+! object 'model' not found
+Run `rlang::last_error()` to see where the error occurred.
+
+*Signfica que la variable que estamos llamando en este caso 'model' no está en el dataset. 
+Mirar si no se cargó al pasarlo en R o no existe y toca crearla.*
 
 merc
 
