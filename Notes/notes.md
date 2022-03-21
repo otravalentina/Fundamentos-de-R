@@ -950,6 +950,10 @@ pairs(mtcars[,2:6])
 # Seleccionando las columnas de interés  y creando nuevo subset
 newdata <- subset(mtcars, select=c(1,6:7,10,11))
 pairs(newdata)
+
+#Eliminar variables
+pairs(mtcars[,-c(1,3,4,5,6,9,10)])
+
 ```
 
 #### Uso de Pairs y filter
