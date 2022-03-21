@@ -932,6 +932,8 @@ La función pairs nos permite cruzar todas las variables del dataset a modo de t
 - **select():** para seleccionar variables o columnas.
 - **filter:** para filtrar datos de un dataset, retorna las filas que pasen el filtro.
 
+Es mejor hacer la selección parte por parte, ya que un scatterplot de todos es muy difícil de interpretar. 
+
 #### Uso de Pairs y select
 
 ![correlacion_1](src/correlacion_1.jpg)
@@ -943,6 +945,7 @@ En ambas imágenes podemos observar la correlacion de los datos, a diferencia de
 ```R
 # correlación básica
 pairs(mtcars[,2:6])
+- **coma:** significa que se van a agregar todas 
 
 # Seleccionando las columnas de interés  y creando nuevo subset
 newdata <- subset(mtcars, select=c(1,6:7,10,11))
