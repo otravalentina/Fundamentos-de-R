@@ -1041,6 +1041,13 @@ Observamos los valores NA en algunas variables, pero necesitamos números en tod
 
 ![correlacion_11](src/correlacion_11.jpg)
 
+#Si te sale este error
+Error in cor(orangeec[, 2:6], use = "Complete.obs") : 
+  invalid 'use' argument
+  
+La solución es instalar el paquete
+> install.packages("usethis")
+
 Corroboramos que el insight entre Services % GDP y GDP PC.
 
 Ejemplo 2
