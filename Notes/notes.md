@@ -1406,14 +1406,14 @@ library(ggplot2)
 ```
 
 ```{r}
-ggplot()+geom_histogram(data=orangeec,aes(x=orangeec$Internet.penetration...population),
-    fill="lightblue",color="darkblue",binwidth=5)+
-labs(x="Penetración de Internet (%) población", y="Cantidad de Países",
-    title="Penetración de Internet en LATAM")+
-scale_x_continuous(breaks=seq(38, max(96), 2))+
-theme(legend.position="none")+
-theme(panel.background=element_blank(),
-    panel.grid.major=element_blank(), panel.grid.minor=element_blank())
+ggplot()+geom_histogram(data = orangeec, aes(x=Internet.penetration...population), 
+                        fill="red", color="yellow",
+                        binwidth = 5)+
+  labs (x="Penetración internet como porcentaje de la población(%)",y= "Cantidad de países", 
+        title = "Penetración de internet en países Latam")+
+  theme(legend.position = "none")+theme(panel.background = element_blank(),
+                                        panel.grid.major = element_blank(),
+                                        panel.grid.minor = element_blank())
 ```
 
 ```{r}
@@ -1427,8 +1427,9 @@ economy
 
 ```{r}
 orangeec <- orangeec %>%
-    mutate(strongEconomy = ifelse(GDP.PC < mean,
-    "Por debajo del promedio PIB", "Por encima del promedio PIB"))
+  mutate(Strong_economy = ifelse(GDP.PC < economy,
+                                 "Por debajo promedio PIB per cápita",
+                                 "Sobre Arriba promedio PIB per cápita"))
 ```
 
 ```{r}
