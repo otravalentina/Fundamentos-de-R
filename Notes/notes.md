@@ -1421,7 +1421,8 @@ library(dplyr)
 ```
 
 ```{r}
-mean <- mean(orangeec$GDP.PC)
+economy <- mean(orangeec$GDP.PC)
+economy
 ```
 
 ```{r}
