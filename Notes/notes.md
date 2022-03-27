@@ -1221,19 +1221,26 @@ Realizaremos los ajustes ahora a nuestro dataset de economía naranja.
 #Generando tablas, filtrando y seleccionando datos - dplyr-Parte 2
 
 # Creando nuevas variables
+
+#Si te sale este error
+
+Error in orangeec %>% mutate(Crecimiento_GPD = ifelse(`GDP Growth %` >=  : 
+  could not find function "%>%" #Es porque te falta tener descargado el paquete dplyr
 #
 orangeec <-  orangeec %>%
-  mutate(Crecimiento_GPD = ifelse(`GDP Growth %` >= 2.5,
-                     "2.5% o más",
-                     "Menos 2.5"))
+  mutate(Crecimiento_GPD = ifelse(GDP.Growth.. >= 2.5,
+                                  "2.5% o más",
+                                  "Menos 2.5"))
+                                  
 #
 orangeec <-  orangeec %>%
-  mutate(Anaranjados = ifelse(`Creat Ind % GDP` >= 2.5,
-                                  "Mas anaranjados",
+  mutate(Anaranjados = ifelse(Creat.Ind...GDP >= 2.5,
+                                  "Más anaranjados",
                                   "Menos anaranjados"))
+                                  
 # Ranking
 orangeec %>%
-  arrange(desc(`Creat Ind % GDP`))
+  arrange(desc("Creat Ind % GDP"))
 
 TopNaranjas <-  orangeec %>%
     filter(Country %in% c("Mexico", "Panama", "Argentina",
@@ -1242,7 +1249,7 @@ TopNaranjas <-  orangeec %>%
 TopNaranjas
 
 TopNaranjas %>%
-  arrange(desc(`Creat Ind % GDP`))
+  arrange(desc(Creat.Ind...GDP))
 
 
 ```
