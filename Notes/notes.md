@@ -1225,7 +1225,7 @@ Realizaremos los ajustes ahora a nuestro dataset de economía naranja.
 #Si te sale este error
 
 Error in orangeec %>% mutate(Crecimiento_GPD = ifelse(`GDP Growth %` >=  : 
-  could not find function "%>%" #Es porque te falta tener descargado el paquete dplyr
+  could not find function "%>%" #Es porque te falta tener descargado el paquete dplyr o la variable está mal escrita/no fue la que creaste
 #
 orangeec <-  orangeec %>%
   mutate(Crecimiento_GPD = ifelse(GDP.Growth.. >= 2.5,
@@ -1433,10 +1433,15 @@ orangeec <- orangeec %>%
 ```
 
 ```{r}
-ggplot(orangeec, aes(x=strongEconomy, y=Creat.Ind...GDP, fill=strongEconomy))+
-geom_boxplot(alpha=0.4)+
-labs(x="Tipo de País", y="Aporte Economía Naranja al PIB",
-    title="Aporte Economía Naranja en PIB en LATAM con alto y bajo PIB per cápita")
+ggplot(orangeec,aes(x=Strong_economy,y=Creat.Ind...GDP, fill=Strong_economy))+
+  geom_boxplot(alpha = 0.4)+
+  labs(x='Tipo de país',
+       y='Aporte economia naranja al PIB',
+       title = 'Aporte economia naranja al PIB paises latam con alto y bajo PIB per capita')+
+  theme(legend.position = "none")+
+  theme(panel.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
 ```
 
 El boxplot indica que los países por encima del promedio del PIB tienen una dispersión mucho mas alta en relación a los aportes de la economía naranja al PIB del país. CUIDADO, contrastar con desviación estándar.
