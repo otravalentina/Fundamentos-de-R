@@ -1388,7 +1388,7 @@ date: "September 17, 2020"
 output: html_document
 ---
 ```
-
+Para hacer eso es ctrl+alt+i
 ```{r}
 orangeec <-read.csv("/Users/rb/Desktop/Curso R/orangeec.csv")
 data(orangeec)
